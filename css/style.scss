@@ -1,0 +1,436 @@
+@each $font-face in 'Bebas-Neue','Socialico'{
+	@font-face{
+		font-family: $font-face;
+		font-style: normal;
+		font-weight: normal;
+		src:url('../font/#{$font-face}.eot');
+		src:url('../font/#{$font-face}.otf'),url('../font/#{$font-face}.ttf');
+	}
+}
+@mixin efectoEncabezado($grados,$color : 'red'){
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	height: 100%;
+	width: 50%;
+	background: unquote($color); 	
+	-webkit-transform: skew(0deg, unquote($grados + 'deg'));
+	-moz-transform:skew(0deg,unquote($grados+'deg'));
+	-ms-transform:skew(0deg,unquote($grados+'deg'));
+	transform:skew(0deg,unquote($grados+'deg'));
+}
+$blue:#3e87cc;
+html,body{
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	max-width: 100%;
+}
+a{
+	color: inherit;
+	text-decoration: none;
+	&:visited{
+		color:inherit;
+	}
+	&:hover{
+		color: inherit;
+	}
+}
+.callig{
+	font-family: 'Calligraffitti', cursive;
+}
+.centerCircle{
+	position: absolute;
+	top: 30%;
+	z-index: 5;
+	height: 100px;
+	width: 100px;
+	padding: 50px;
+	padding-bottom: 60px;
+	background-color: rgba(0,0,0,0.7);
+	color: #f7f7f7;
+	text-align: center;
+	border-radius: 100px;
+	font-size: 1.8em;
+	left: 40%;
+	left: -webkit-calc(50% - 100px);
+	border: solid 2px #d8d68c;
+}
+#costos{
+	background-image: url(../img/DSCN1332.jpg);
+	background-size:100% auto;
+	.precio{
+		position: relative;
+		width: 28%;
+		margin-left: 3.5%;
+		display: inline-block;
+		background-color: #f7f7f7;
+		vertical-align: top;
+		padding: 2em 0.5%;
+		text-align: center;
+		padding-top: 0;
+		border: solid 1px #CCC;
+		h3{
+			font-size: 2em;
+			color: $blue;
+		}
+		.costo{
+			background-color: $blue;
+			color: #fff;
+			font-size: 1.5em;
+			width: 50%;
+			margin: 0 auto;
+			padding: 0.5em;
+		}
+		.ver-mas{
+			display: block;
+			margin-top: 30px;
+			cursor: pointer;
+		}
+	}
+}
+#buffet{	
+	position: relative;
+	.image_food{
+		z-index: 20;
+		position: absolute;
+		right: 0;
+		width: 80px;
+		height: 80px;
+		border-radius: 80px;
+		transition: all 1s ease-in;
+		background-repeat: no-repeat;
+		background-size: 200%;
+		background-position: 50%;
+		cursor: pointer;
+	}
+	.viewport{
+		z-index: 1;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 0px;
+		background-size: 100% auto;
+		transition:all 1s ease-in;
+		cursor: auto;
+	}
+}
+#contacto{
+	background: url(../img/DSCN1218.jpg);
+	background-size: 100% auto;
+	text-align: center;
+	h1,.social{
+		color: #f7f7f7;
+		text-shadow:0px 0px 10px rgba(0,0,0,0.8);
+	}
+	.marginTop{
+		padding-top:6em;
+	}
+	.social{
+		font-size: 4em;
+		transition:all 0.4s;
+		display: inline-block;
+		cursor: pointer;
+		&:hover{
+			color:$blue;
+			text-shadow:0px 0px 2px #000;
+		}
+	}
+	p{
+		font-size: 1.5em;
+		color: #222;
+		text-shadow:0px 0px 2px #000;
+		background-color: rgba(250,250,250,0.7);
+		margin: 0;
+	}
+	h3{
+		font-size: 1.8em;
+		line-height: 0.8em;
+		background: #f7f7f7;
+		color: $blue;
+		padding: 0.2em;
+	}
+}
+#cuartos{
+	position: relative;
+}
+.fullScreen{
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin:0;	
+	background-attachment: fixed;
+}
+#google_canvas{
+	width: 100%;
+	height: 400px;
+	border: solid 5px #eee;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.8);
+}
+.half{
+	display: inline-block;
+	margin-right: -4px;
+	width: 50%;
+	vertical-align: top;
+}
+.halfRooms{
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	z-index: 0;
+	img{
+		-webkit-filter: grayscale(1) blur(2px);
+		transition:all 0.4s;
+		width: 100%;
+		&:hover{
+			-webkit-filter: grayscale(0.2) blur(0px);
+		}
+	}
+}
+header{
+	position: fixed;
+	z-index: 10000;
+	width: 100%;
+	top: -9em;
+	text-align: center;
+	transition:all 0.4s;
+	&:hover{
+		top:-6em;
+	}
+	&:before{
+		left: 0;
+		@include efectoEncabezado(5,'#000');
+	}
+	&:after{
+		@include efectoEncabezado(-5,'#000');	
+		right: 0;
+	}
+	nav ul{
+		margin: 0;
+		color: #f7f7f7;
+		font-weight: bold;
+		padding-bottom:1em;
+		li{
+			display: inline-block;
+			padding: 0 10px;
+		}	
+	}
+	#logo{
+		background-color: #000;
+		position: relative;
+		width: 15%;
+		text-align: center;
+		min-width: 100px;
+		max-width: 100%;
+		left: 43%;
+		height: 100px;
+		top: 140px;
+		z-index: 5;
+		border-radius: 5em 0;
+		img{
+			margin-top: -20px;
+			width: 100px;
+		}		
+	}
+}
+.marginTop{
+	width: 80%;
+	margin: 0 auto;
+	padding-top: 7em;
+}
+.mensajePrincipal{
+	width: 40%;
+	padding-top: 10%;
+	color: #f7f7f7;
+	position: relative;
+	h2{
+		color: #ededed;
+		font-size: 3em;
+		text-shadow:0px 0px 0px #000;
+	}
+	.triangle{
+		width: 0;
+		height: 0;
+		opacity: 0.7;
+		border-top: 100px solid transparent;
+		border-left: 190px solid #000;
+		border-bottom: 100px solid transparent;
+		span{
+			line-height: 2em;
+			display: block;
+			width: 130px;
+			top: -2em;
+			left: -180px;
+			position: relative;
+		}
+	}
+	p{
+		font-weight: bolder;
+	}
+}
+#regresar-ventana{
+	cursor: pointer;
+	display: block;
+	margin-top: 10px;
+}
+.ribbon{
+	width: 117%;
+	height: 50px;
+	position: relative;
+	left: -25px;
+	top: 20px;
+	background: url(../img/ribbon.png);
+	background-size: 100% 100%;
+}
+.slider_container{
+	position: absolute;
+	overflow: hidden;
+	top: 0px;
+	left: 0;
+	z-index: -2;
+	background-color: #000;
+	.slideContainer{
+		white-space: nowrap;
+		height: 100%;
+		.slide{
+			display: inline-block;
+			background-color: #fff;
+			margin-right: -4px;
+			vertical-align: top;
+			background-size: 100%;
+			background-position: bottom;
+		}
+	}
+}
+.social{
+	font-family: 'Socialico';
+}
+@media (max-width: 960px) {
+	header{
+		background-color: #000;
+		
+ 		nav ul li{
+ 			opacity: 0;
+ 			transition:all 0.4s;
+ 		}
+ 		#logo{
+ 			padding: 1em;
+ 			transition:all 1s;
+ 		}
+ 		&:active nav ul{
+ 			height: 130px;
+ 		}
+ 		&:active nav ul li{
+ 			opacity: 1;
+ 		}
+ 		&:active #logo{
+ 			top: 300px;
+ 		}
+	}
+	.fullScreen{
+		min-height: 100%;
+		height: auto;
+	}
+	#index
+	{
+    	background: url(../img/DSCF0302-movil.jpg);
+    	background-size: auto 100%;
+	} 
+	#buffet{
+		height: 100%;
+		.image_food{
+			background-size: auto 100%;
+			background-position: top 50%;
+		}
+	}
+	#contacto{
+		background:url(../img/DSCN1218-movil.jpg);
+		background-size: auto 100%;
+	}
+	#costos{
+		background-size: auto 100%;
+		background:url(../img/DSCN1332-movil.jpg);
+		height: 100%;
+	 	.precio{
+			width: 45%;
+			margin:0 auto;
+		}
+	}
+	#go_up{
+		display: none;
+	}
+	.img-principal{
+		display: none;
+	}
+	.centerCircle{
+		position: static;
+		border-radius: 0px;
+		max-width: 100%;
+		top: 0px;
+		width: 100%;
+		height: auto;
+		padding: 0;
+		margin-top: 1em;
+	}
+	.half{
+		display: block;
+		width: 100%;
+		top: 0px;
+	}
+	.slideContainer{
+    	display: none;
+    }
+}
+@media (max-width: 600px) {
+	.fullScreen:nth-of-type(1)
+	{
+    	background: url(../img/intro-movil.jpg);
+    	background-size: auto 100%;
+	} 
+	.hidePhone{
+		display: none;
+	}
+	.mensaje{
+		margin-top: 0;
+		font-size: 1em;
+		padding: 0;
+		width: 100%;
+	}
+	*{
+		-ms-word-break: break-all;
+    	word-break: break-all;
+    	word-break: break-word;
+	}
+	#main,.down{
+		width: 100%;
+	}
+	[class*="span"],
+    .row-fluid [class*="span"] {
+        display: block;
+        float: none;
+        width: 100%;
+        margin-left: 0;
+    }
+    .posts article{
+    	display: block;
+    	width: 100%;
+    }
+    #costos{
+    	height: auto;
+    }
+    #costos .precio{
+		width: 100%;
+		display: block;
+		margin: 0;
+	}
+    header nav ul li{
+    	width: 80%;
+    	margin: 0 auto;
+    	display: block;
+    }
+    .slideContainer{
+    	display: none;
+    }
+}

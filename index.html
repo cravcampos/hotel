@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Hotel Cometa</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/style.css" >
+        <link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body ontouchstart="">
+        <!--[if lt IE 9]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+        <header>
+            <div id="logo"><h1><img src="img/logo_cometa.png" alt='Logo del hotel'></h1></div>
+            <div id="navigation">
+                <nav class='callig'>
+                    <ul id='navegacionPrincipal'>
+                        <li><a href='#index'>Inicio</a></li>
+                        <li><a href='#costos'>Costos</a></li>
+                        <li><a href='#cuartos'>Cuartos</a></li>
+                        <li><a href='#contacto'>Contacto y Reservacciones</a></li>
+                        <li><a href='#buffet'>Buffet</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="slider_container fullScreen">
+            <div class="slideContainer">
+                <div class="slide fullScreen" data-background="img/DSCF0302"></div>
+                <div class="slide fullScreen" data-background="img/DSCF0303"></div>
+                <div class="slide fullScreen" data-background="img/DSCF0308"></div>
+                <div class="slide fullScreen" data-background="img/DSCN1592"></div>
+            </div>
+        </div>
+        <section class="fullScreen" id='index'>
+            <div class="mensajePrincipal">
+                <p class="triangle"><span>Desde 300usd por noche</span></p>
+                <h2>Un lugar para disfrutar y relajarse</h2>
+                <p>Cancún, México</p>
+            </div>
+        </section>
+        <section id='cuartos' class='fullScreen'>
+            <h1 class='centerCircle callig'>El mejor servicio</h1>
+            <div class="half halfRooms">
+                <img src="img/DSCF0037.jpg">
+            </div>
+            <div class="half halfRooms">
+                <img src="img/DSCN1127.jpg">
+            </div>
+        </section>
+
+        <script type=" text/x-jquery-tmpl" id='precioTemplate'>
+            <div>
+                <div class="ribbon"></div>
+                <h3>${paquete}</h3>
+                <p><strong>Contenido del paquete</strong></p>
+                <ol>
+                    {{each opciones}}
+                        <li>${opcion}</li>
+                    {{/each}}
+                </ol>
+                <p class="costo">${costo}</p>
+                <a id='regresar-ventana'>Regresar</a>
+            </div>
+        </script>
+        <section id="costos" class='fullScreen callig' data-stellar-background-ratio="0.5">
+            <div class="marginTop">
+                <div class="precio" data-stellar-ratio="2.09">
+                    <div class="ribbon"></div>
+                    <h3>Paquete básico</h3>
+                    <p>Disfruta de nuestro paquete sencillo, perfecto para vacaciones improvisadas donde el presupuesto es limitado.</p>
+                    <p class="costo">300</p>
+                    <a class="ver-mas" data-number='0'>Conoce más del paquete</a>
+                </div>
+                <div class="precio" data-stellar-ratio="1.5" data-stellar-vertical-offset="1450">
+                    <div class="ribbon"></div>
+                    <h3>Paquete básico</h3>
+                    <p>Disfruta de nuestro paquete sencillo, perfecto para vacaciones improvisadas donde el presupuesto es limitado.</p>
+                    <p class="costo">300</p>
+                    <a class="ver-mas" data-number='1'>Conoce más del paquete</a>
+                </div>
+                <div class="precio" data-stellar-ratio="3" data-stellar-vertical-offset="-550">
+                    <div class="ribbon"></div>
+                    <h3>Paquete básico</h3>
+                    <p>Disfruta de nuestro paquete sencillo, perfecto para vacaciones improvisadas donde el presupuesto es limitado.</p>
+                    <p class="costo">300</p>
+                    <a class="ver-mas" data-number='2'>Conoce más del paquete</a>
+                </div>
+            </div>
+        </section>
+        <section id='buffet' class='fullScreen' >
+            <div class="image_food viewport" data-background='img/DSCF0330' ></div>
+            <div class="image_food" data-background='img/DSCF0311' ></div>
+            <div class="image_food" data-background='img/DSCF0371' ></div>
+            <div class="image_food" data-background='img/DSCF0330'></div>
+        </section>
+        <section class="fullScreen" id='contacto' data-stellar-background-ratio="0.2">
+            <div class="marginTop callig">
+                <h1>Contacto</h1>
+                <div class="half">
+                    <h3>Redes Sociales</h3>
+                    <span class='social'><a href='http://facebook.com'>F</a></span>
+                    <span class='social'><a href='http://twitter.com'>O</a></span>
+                    <span class='social'><a href='http://youtube.com'>X</a></span>
+                    <h3>Dirección y teléfono</h3>
+                    <p>Dirección inventada, avenida inventada, número inventado</p>
+                    <p>Teléfono 231231231</p>
+                </div>
+                <div class="half">
+                    <div id="google_canvas" data-stellar-ratio="2.08">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <script src="js/plugins.js"></script>
+        <script src="js/jquery.ui.core.min.js"></script>
+        <script src="js/jquery.ui.effect.min.js"></script>
+        <script src="js/jquery.flip.min.js"></script>
+        <script src="js/scrollto.min.js"></script>
+        <script src="js/localscroll.min.js"></script>
+        <script src="js/stellar.min.js"></script>
+        <script src="js/jquery.scrollorama.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
